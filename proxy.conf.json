@@ -1,0 +1,6 @@
+{
+    "/reunion_list/get/": {
+      "target": "http://localhost:8000",
+      "secure": false
+    }
+  }

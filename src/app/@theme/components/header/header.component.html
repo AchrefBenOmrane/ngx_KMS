@@ -1,0 +1,50 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()"><span>KMS</span></a>
+  </div>
+  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+  </nb-select>
+</div>
+
+  <figure>
+    <img src="../../assets/icon/talent.png" alt="shield" style="width:40px ;height:35px" >
+    <figcaption>Talent</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../../assets/icon/computer.png" alt="shield" style="width:40px ;height:35px ; margin-left: 8px;" >
+    <figcaption>Pilotage</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../../assets/icon/shield.png" alt="shield" style="width:40px ;height:35px" >
+    <figcaption>Quality</figcaption>
+  </figure>
+
+
+
+
+
+<div class="header-container">
+  <nb-actions size="small">
+
+    <nb-action class="control-item">
+      <nb-search type="rotate-layout"></nb-search>
+    </nb-action>
+    <nb-action class="control-item" icon="email-outline"></nb-action>
+    <nb-action class="control-item" icon="bell-outline"></nb-action>
+    <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
+      <nb-user [nbContextMenu]="userMenu"
+               [onlyPicture]="userPictureOnly"
+               [name]="user?.name"
+               [picture]="user?.picture">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>
+
+

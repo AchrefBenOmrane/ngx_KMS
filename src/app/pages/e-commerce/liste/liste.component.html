@@ -1,0 +1,25 @@
+<nb-card>
+    <nb-card-header>
+      Liste Des Réunions
+    </nb-card-header>
+  
+    <!-- <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card> 
+ <table>
+  <tr><th>Name</th></tr>
+  <tr *ngFor="let test of table ">
+    <td>{{test.Retat}}</td>
+  </tr>
+</table> -->
+
+
+<ul>
+  <li *ngFor="let test of table ">
+    {{test.Retat}}
+    {{test.Rid}}
+    {{test.Rdate}}
+  </li>
+</ul> 
