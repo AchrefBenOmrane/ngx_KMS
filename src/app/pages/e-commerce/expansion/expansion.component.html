@@ -1,0 +1,112 @@
+<nb-card>
+
+  <nb-card-header>
+    Gestions Des Réunions
+  </nb-card-header>
+<nb-card-body>
+<mat-accordion>
+  <!-- PV Réunions panel -->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          PV Réunions
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+
+  <!-- END PV Réunions -->
+
+  <!-- Reunion confirmées panel -->
+  <mat-expansion-panel (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+Mes Réunions confirmées
+</mat-panel-title>
+<!-- <mat-panel-description>
+Currently I am {{panelOpenState ? 'open' : 'closed'}}
+</mat-panel-description> -->
+</mat-expansion-panel-header>
+<p>I'm visible because I am open</p>
+</mat-expansion-panel>
+
+<!-- END Reunion confirmées panel -->
+
+
+<!-- Mes invitations panel -->
+<mat-expansion-panel (opened)="panelOpenState = true"
+(closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+Mes invitations
+</mat-panel-title>
+<!-- <mat-panel-description>
+Currently I am {{panelOpenState ? 'open' : 'closed'}}
+</mat-panel-description> -->
+</mat-expansion-panel-header>
+<div class="row">
+<p>Invitation 1  </p>
+
+<button mat-button target="_blank" style="position: absolute; right: 0;"><mat-icon>edit</mat-icon></button>
+</div>
+
+<div class="row">
+  <p>Invitation 2 </p>
+
+  <button mat-button target="_blank" style="position: absolute; right: 0;"><mat-icon>edit</mat-icon></button>
+  </div>
+</mat-expansion-panel>
+
+<!-- END invitations panel -->
+
+
+
+<!-- Reunions ignorées panel -->
+<mat-expansion-panel (opened)="panelOpenState = true"
+(closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+Mes Réunions ignorées
+</mat-panel-title>
+<!-- <mat-panel-description>
+Currently I am {{panelOpenState ? 'open' : 'closed'}}
+</mat-panel-description> -->
+</mat-expansion-panel-header>
+<p>I'm visible because I am open</p>
+</mat-expansion-panel>
+
+<!-- END Reunion ignorées panel -->
+
+
+
+
+<!-- Reunions annulées panel -->
+<mat-expansion-panel (opened)="panelOpenState = true"
+(closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+Mes Réunions annulées
+</mat-panel-title>
+<!-- <mat-panel-description>
+Currently I am {{panelOpenState ? 'open' : 'closed'}}
+</mat-panel-description> -->
+</mat-expansion-panel-header>
+<p>I'm visible because I am open</p>
+</mat-expansion-panel>
+
+<!-- END Reunion annulées panel -->
+
+
+  </mat-accordion>
+
+
+  <!-- Copyright 2020 Google LLC. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
+    </nb-card-body>
+</nb-card>

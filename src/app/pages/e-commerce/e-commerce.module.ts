@@ -19,6 +19,7 @@ import { ECommerceComponent } from './e-commerce.component';
 import { ChartModule } from 'angular2-chartjs';
 
 
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
@@ -44,7 +45,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-
+import {ExpansionComponent} from './expansion/expansion.Component'
 
 import { MaterialTableComponent } from './material-table/material-table.component'
 
@@ -75,6 +76,10 @@ import { MaterialTableComponent } from './material-table/material-table.componen
     NbInputModule,
     ThemeModule,
     NbAccordionModule,
+    MatExpansionModule,
+    
+
+
    
     
     
@@ -86,6 +91,7 @@ import { MaterialTableComponent } from './material-table/material-table.componen
     GererComponent,
     FsIconComponent,
     TreeGridComponent,
+    ExpansionComponent,
   
     
     MaterialTableComponent

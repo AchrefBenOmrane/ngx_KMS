@@ -86,7 +86,7 @@ ngOnInit(){
   
       (doc as any).autoTable({
         head: this.head ,
-        body: this.dataSource.filteredData,
+        body: this.data,
         theme: 'plain',
         didDrawCell: data => {
           console.log(data.column.index)
