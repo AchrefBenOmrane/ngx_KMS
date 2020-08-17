@@ -7,7 +7,9 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { AddComponent } from './add/add.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms'; 
 @NgModule({
   imports: [
     PagesRoutingModule,
@@ -15,6 +17,9 @@ import { AddComponent } from './add/add.component';
     NbMenuModule,
     ECommerceModule,
     MiscellaneousModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   declarations: [
     PagesComponent,

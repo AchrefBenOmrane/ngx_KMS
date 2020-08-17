@@ -14,6 +14,23 @@ constructor(private httpModule :HttpClient){}
        return this.httpModule.get('http://localhost:8000/reunion_list/get/');
       
     }
+
+    create(data) {
+        return this.httpModule.post('http://localhost:8000/show_list/', data);
+      }
+
+    delete(id: number): Observable<any> {
+        return this.httpModule.delete('http://localhost:8000/show_list/'+ id);
+      }
+
+    update(id: number, value: any): Observable<object> {
+        return this.httpModule.put('http://localhost:8000/show_list/'+id, value);
+      }
+
+      deleteAll(): Observable<any> {
+        return this.httpModule.delete('http://localhost:8000/show_list/');
+      }
+    
    
 }
 

@@ -3,7 +3,7 @@
   <nb-card-header>
     Liste Des Réunions
   </nb-card-header>
-
+<div id="htmlData" #htmlData>
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
   <!-- Position Column -->
@@ -38,5 +38,12 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+</div>
+
+
+<div >
+  <button class="btn btn-success btn-block" (click)="createPdf()">Telecharger PDF</button>
+  <!-- <button class="btn btn-danger btn-block" (click)="downloadPDF()">Download PDF</button> -->
+</div>
 
 </nb-card>

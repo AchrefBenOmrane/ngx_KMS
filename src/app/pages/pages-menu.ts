@@ -8,7 +8,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: { icon: 'add',
     pack: 'myicon'}, 
     // icon : '<i class="nb-plus"></i>',
-    link: '/pages/dashboard', 
+    link: '/pages/add', 
      },
    
    

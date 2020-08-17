@@ -1,29 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild , ElementRef} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { SmartTableService} from '../../../@core/mock/smart-table.service';
 import {list} from '../../../@core/mock/listClass';
+import jsPDF from 'jspdf';
+// import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
-// export interface PeriodicElement {
-//     name: string;
-//     position: number;
-//     weight: number;
-//     symbol: string;
-//   }
-  
-//   const ELEMENT_DATA: PeriodicElement[] = [
-//     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-//     {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-//     {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-//     {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-//     {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-//     {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-//     {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-//     {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-//     {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-//     {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-//   ];
 @Component({
   selector: 'ngx-material-table',
   templateUrl: './material-table.component.html',
@@ -34,8 +18,10 @@ import {list} from '../../../@core/mock/listClass';
  */
 
 export class MaterialTableComponent implements OnInit{
+  @ViewChild('htmlData') htmlData:ElementRef;
     displayedColumns: string[] = ['position', 'id', 'etat', 'date'];
     listData: MatTableDataSource<any>;
+    
 
     // dataSource = new MatTableDataSource(ELEMENT_DATA);
     dataSource=[];
@@ -61,6 +47,7 @@ export class MaterialTableComponent implements OnInit{
     ){}
 ngOnInit(){
   this.getName();
+  this.createPdf()
 
 }
     getName(){
@@ -76,5 +63,98 @@ ngOnInit(){
         }
       )
     }
-    
+    data = [
+      [1, 'Finland', 7.632, 'Helsinki'],
+      [2, 'Norway', 7.594, 'Oslo'],
+      [3, 'Denmark', 7.555, 'Copenhagen'],
+      [4, 'Iceland', 7.495, 'Reykjavík'],
+      [5, 'Switzerland', 7.487, 'Bern'],
+      [9, 'Sweden', 7.314, 'Stockholm'],
+      [73, 'Belarus', 5.483, 'Minsk'],
+    ]
+    head = [['No.', 'ID', 'Etat', 'Date']]
+
+    createPdf() {
+      var doc = new jsPDF();
+      
+  
+      doc.setFontSize(18);
+      doc.text('My PDF Table', 11, 8);
+      doc.setFontSize(11);
+      doc.setTextColor(100);
+  
+  
+      (doc as any).autoTable({
+        head: this.head ,
+        body: this.dataSource.filteredData,
+        theme: 'plain',
+        didDrawCell: data => {
+          console.log(data.column.index)
+        }
+      })
+  
+      // Open PDF document in new tab
+      doc.output('dataurlnewwindow')
+  
+      // Download PDF document  
+      doc.save('table.pdf');
+    }
+
+  
+  
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //   public openPDF():void {
+  //     let DATA = this.htmlData.nativeElement;
+  //     let doc = new jsPDF('p','pt', 'a4');
+  //     doc.fromHTML(DATA.innerHTML,15,15);
+  //     doc.output('dataurlnewwindow');
+  //   }
+  
+  
+  //   public downloadPDF():void {
+  //     let DATA = this.htmlData.nativeElement; 
+  //     let doc = new jsPDF('p','pt', 'a4');
+  
+  //     let handleElement = {
+  //       '#editor':function(element,renderer){
+  //         return true;
+  //       }
+  //     };
+  //     doc.fromHTML(DATA.innerHTML,15,15,{
+  //       'width': 200,
+  //       'elementHandlers': handleElement
+  //     });
+  
+  //     doc.save('angular-demo.pdf');
+  //   }
+    
+  // }
