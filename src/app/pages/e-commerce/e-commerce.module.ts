@@ -19,7 +19,6 @@ import { ECommerceComponent } from './e-commerce.component';
 import { ChartModule } from 'angular2-chartjs';
 
 
-import {MatExpansionModule} from '@angular/material/expansion';
 
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
@@ -48,6 +47,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {ExpansionComponent} from './expansion/expansion.Component'
 
 import { MaterialTableComponent } from './material-table/material-table.component'
+
+import {MatExpansionModule} from '@angular/material/expansion';
+
+
 
 @NgModule({
   imports: [

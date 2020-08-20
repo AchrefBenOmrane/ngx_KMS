@@ -19,7 +19,7 @@ import 'jspdf-autotable';
 
 export class MaterialTableComponent implements OnInit{
   @ViewChild('htmlData') htmlData:ElementRef;
-    displayedColumns: string[] = ['position', 'id', 'etat', 'date'];
+    displayedColumns: string[] = ['No.', 'titre', 'date', 'heure','date_r','type','date_c','createur'];
     listData: MatTableDataSource<any>;
     
 
@@ -47,7 +47,7 @@ export class MaterialTableComponent implements OnInit{
     ){}
 ngOnInit(){
   this.getName();
-  this.createPdf()
+ 
 
 }
     getName(){
@@ -103,34 +103,6 @@ ngOnInit(){
   
   
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   //   public openPDF():void {
   //     let DATA = this.htmlData.nativeElement;

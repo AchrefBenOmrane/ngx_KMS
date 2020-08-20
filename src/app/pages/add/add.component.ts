@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
 import {list} from '../../@core/mock/listClass';
 import {SmartTableService} from '../../@core/mock/smart-table.service';
+
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 @Component({
   selector: 'ngx-add',
   templateUrl: './add.component.html',
@@ -10,6 +11,7 @@ import {SmartTableService} from '../../@core/mock/smart-table.service';
 })
 export class AddComponent {
   
+
   customer: list = new list();
   submitted = false;
   constructor(public ser:SmartTableService){}
@@ -35,6 +37,41 @@ export class AddComponent {
   }
  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

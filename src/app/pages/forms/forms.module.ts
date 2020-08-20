@@ -9,6 +9,8 @@ import {
   NbRadioModule,
   NbSelectModule,
   NbUserModule,
+  NbTabsetModule,
+  NbRouteTabsetModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -19,9 +21,11 @@ import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { FormsModule as ngFormsModule } from '@angular/forms';
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { IConstatComponent } from './iConstat/iConstat.component';
 @NgModule({
   imports: [
+    MDBBootstrapModule.forRoot(),
     ThemeModule,
     NbInputModule,
     NbCardModule,
@@ -29,11 +33,13 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
     NbActionsModule,
     NbUserModule,
     NbCheckboxModule,
+    NbTabsetModule,
     NbRadioModule,
     NbDatepickerModule,
     FormsRoutingModule,
     NbSelectModule,
     NbIconModule,
+    NbRouteTabsetModule,
     ngFormsModule,
   ],
   declarations: [
@@ -42,6 +48,7 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
     FormInputsComponent,
     FormLayoutsComponent,
     DatepickerComponent,
+    IConstatComponent,
   ],
 })
 export class FormsModule { }

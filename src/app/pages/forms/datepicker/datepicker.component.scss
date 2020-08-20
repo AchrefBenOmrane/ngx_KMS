@@ -1,12 +1,17 @@
-@import '../../../@theme/styles/themes';
-
-@include nb-install-component() {
-  nb-card-body {
-    display: flex;
-    justify-content: space-between;
-
-    input {
-      width: 100%;
+@media all and (min-width: 768px) {
+  tr  {
+    td {
+      vertical-align: middle !important;
+    }
+     th {
+  color:#1E90FF;
+}
+    span {
+      &:not([class]) {
+        padding: 1rem 1rem;
+      }
     }
   }
 }
+
+

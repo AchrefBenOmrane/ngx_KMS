@@ -6,17 +6,18 @@ import {list} from './listClass';
 @Injectable({
     providedIn: 'root'
 })
+
 export class SmartTableService  {
 lists :list[];
 constructor(private httpModule :HttpClient){}
 
    getData():Observable<any>{
-       return this.httpModule.get('http://localhost:8000/reunion_list/get/');
+       return this.httpModule.get('http://localhost:8000/show_list_Reunion/');
       
     }
 
     create(data) {
-        return this.httpModule.post('http://localhost:8000/show_list/', data);
+        return this.httpModule.post('http://localhost:8000/show_list_Reunion/', data);
       }
 
     delete(id: number): Observable<any> {

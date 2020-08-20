@@ -1,3 +1,4 @@
+import { IConstatComponent } from './iConstat/iConstat.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,6 +7,7 @@ import { FormInputsComponent } from './form-inputs/form-inputs.component';
 import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+// tslint:disable-next-line: import-spacing
 
 const routes: Routes = [
   {
@@ -25,8 +27,8 @@ const routes: Routes = [
         component: FormLayoutsComponent,
       },
       {
-        path: 'buttons',
-        component: ButtonsComponent,
+        path: 'constat',
+        component: IConstatComponent,
       },
       {
         path: 'datepicker',

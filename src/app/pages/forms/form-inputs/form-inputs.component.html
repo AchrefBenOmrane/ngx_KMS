@@ -1,87 +1,182 @@
+<!-- <html>
+  <head>
+
+  </head> -->
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()">
+
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-8"  class="col-md-8">
     <nb-card>
-      <nb-card-header>Default Inputs</nb-card-header>
+      <nb-card-header>Informations</nb-card-header>
       <nb-card-body>
-        <input type="text" nbInput fullWidth placeholder="Project">
-        <div class="full-name-inputs">
-          <input type="text" nbInput fullWidth placeholder="Nick">
-          <input type="text" nbInput fullWidth placeholder="Last Name">
+
+        <div class="form-group">
+          <label  class="label">Titre Réunion</label>
+          <input type="text" nbInput fullWidth id="rtitrereunion" class="form-control" [(ngModel)]="customer.rtitrereunion" name="rtitrereunion">
         </div>
-        <input type="password" nbInput fullWidth placeholder="Password">
-        <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">
-        <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">
-        <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">
-        <input type="text" nbInput fullWidth placeholder="Disabled input" disabled/>
-        <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
-        <input type="text" nbInput fullWidth fieldSize="small"  placeholder="Small Input">
-        <input type="text" nbInput fullWidth fieldSize="medium"  placeholder="Medium Input">
-        <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Large Input">
+
+
+        <div class="full-name-inputs">
+          <label  class="label">Type</label>
+              <nb-select selected="1">
+                <nb-option value="1">type 1</nb-option>
+                <nb-option value="2">type 2</nb-option>
+              </nb-select>    <label  class="label">Etat</label>   <label  class="label">En cours</label>
+
+              <label  class="label">Piéce jointe</label> <input type="file" placeholder="choisir un fichier" nbInput fullWidth>
+        </div>
+        <div class="full-name-inputs">
+          <label  class="label">Responsable PV</label>
+           <input type="text" nbInput fullWidth >
+
+          <label  class="label">Responsable animateur</label>
+           <input type="text" nbInput fullWidth >
+
+          <label  class="label">Animateur</label>
+           <input type="text" nbInput fullWidth>
+
+        </div>
+        <label  class="label">commentaires</label>
+        <textarea rows="5" nbInput fullWidth shape="round"></textarea>
+
       </nb-card-body>
     </nb-card>
   </div>
-
-  <div class="col-lg-6">
-
+  <div class="col-4">
     <nb-card>
-      <nb-card-header>Select</nb-card-header>
-      <nb-card-body>
-        <nb-select selected="1">
-          <nb-option value="1">Option 1</nb-option>
-          <nb-option value="2">Option 2</nb-option>
-        </nb-select>
-      </nb-card-body>
-    </nb-card>
+      <nb-card-header>Invitations</nb-card-header>
+    <nb-card-body>
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">employé</th>
+          <th scope="col">group</th>
+          <th scope="col">email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                <label class="custom-control-label" for="customCheck1">1</label>
+            </div>
+          </td>
+          <td>Bootstrap </td>
+          <td>Cristina</td>
+          <td>Cristina</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">2</label>
+            </div>
+          </td>
+          <td>Bootstrap</td>
+         <td>ghhrh</td>
+         <td>ghhrh</td>
 
-    <nb-card>
-      <nb-card-header>Validation States</nb-card-header>
-      <nb-card-body>
-        <input type="text" nbInput fullWidth status="info"  placeholder="Input with Info">
-        <input type="text" nbInput fullWidth status="success"  placeholder="Warning Input">
-        <input type="text" nbInput fullWidth status="warning"  placeholder="Danger Input">
-        <input type="text" nbInput fullWidth status="danger" placeholder="Danger Input">
-        <input type="text" nbInput fullWidth status="primary"  placeholder="Input with Primary">
-        <div class="validation-checkboxes">
-          <nb-checkbox status="success">Success Checkbox</nb-checkbox>
-          <nb-checkbox status="warning">Warning Checkbox</nb-checkbox>
-          <nb-checkbox status="danger">Danger Checkbox</nb-checkbox>
-        </div>
-      </nb-card-body>
-    </nb-card>
+        </tr>
 
-    <nb-card>
-      <nb-card-header>Checkboxes & Radios</nb-card-header>
-      <nb-card-body class="checkbox-radio">
-        <div class="demo-items">
-          <nb-checkbox>Checkbox 1</nb-checkbox>
-          <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
-        </div>
-        <div class="demo-items">
-          <nb-radio-group [(value)]="radioGroupValue">
-            <nb-radio
-              [value]="'This is value 1'">
-              Radio 1
-            </nb-radio>
-            <nb-radio
-              [value]="'This is value 2'">
-              Radio 2
-            </nb-radio>
-            <nb-radio
-              [value]="'This is value 3'">
-              Radio 3
-            </nb-radio>
-          </nb-radio-group>
-        </div>
-        <div class="demo-items">
-          <nb-checkbox disabled>Disabled Checkbox</nb-checkbox>
-          <nb-radio-group disabled>
-            <nb-radio
-              [value]="'Disabled Value'">
-              Disabled Radio
-            </nb-radio>
-          </nb-radio-group>
-        </div>
-      </nb-card-body>
+      </tbody>
+    </table>
+  </nb-card-body>
     </nb-card>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-8">
+    <nb-card size="small">
+      <nb-tabset fullWidth>
+    <nb-tab tabTitle="Planification" class="c">
+       <div  class="full-name-inputs">
+          <label  class="label">Date Prevue </label>
+          <input nbInput [nbDatepicker]="formpicker">
+   <nb-datepicker #formpicker></nb-datepicker>
+   <label  class="label">Heure debut prévue </label>
+   <input type="time" nbInput fullWidth>
+  </div>
+   <div class="full-name-inputs">
+     <label  class="label">Durée prévue </label> 
+     <input type="text" nbInput fullWidth></div>
+
+   <div  class="full-name-inputs">
+    <label  class="label">lieu</label> 
+    <input type="text" nbInput fullWidth>
+
+    <label  class="label">Heure fin prévue </label> 
+    <input type="time" nbInput fullWidth>
+   </div>
+</nb-tab>
+        <nb-tab tabTitle="Réalisation" class="c">
+
+        </nb-tab>
+      </nb-tabset>
+    </nb-card>
+  </div>
+  <div class="col-2">
+    <nb-card size="small">
+     <nb-card-header>Repeter la reunion</nb-card-header>
+      <nb-radio-group [(value)]="radioGroupValuee" style= "margin-right: 40px;">
+        <nb-radio
+          [value]="'This is value 1'">
+<label>         jamais</label>
+        </nb-radio>
+        <nb-radio
+          [value]="'This is value 2'">
+          <label> quotidienne</label>
+        </nb-radio>
+        <nb-radio
+          [value]="'This is value 3'">
+          <label>  hebdomadaire</label>
+        </nb-radio>
+        <nb-radio
+        [value]="'This is value 4'">
+        <label>   Mesuelle</label>
+      </nb-radio> <nb-radio
+      [value]="'This is value 5'">
+      <label>     Annuelle</label>
+    </nb-radio>
+
+      </nb-radio-group>
+
+    </nb-card>
+  </div>
+
+
+<div class="col-2" >
+    <nb-card size="small">
+  <nb-card-header>Module</nb-card-header>
+     <div class="demo-items">
+      <nb-radio-group [(value)]="radioGroupValue">
+        <nb-radio
+          [value]="'This is value 1'">
+        client
+        </nb-radio>
+        <nb-radio
+          [value]="'This is value 2'">
+         Actionnaire
+        </nb-radio>
+      </nb-radio-group>
+    </div>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+  <ngx-datepicker></ngx-datepicker>
+</div>
+</div>
+<div class="row" style="margin-right:50px">
+<button type="button" class="btn btn-primary" type="submit" style="margin-right:50px">Valider</button>
+<button type="button" class="btn btn-danger" >Annuler</button>
+</div>
+
+
+  </form>
+</div>
+

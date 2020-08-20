@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NbDateService } from '@nebular/theme';
-
-
 @Component({
-  selector: 'ngx-datepicker',
-  templateUrl: 'datepicker.component.html',
-  styleUrls: ['datepicker.component.scss'],
+  selector: 'ngx-iconstat',
+  templateUrl: './iConstat.component.html',
+  styleUrls: ['./iConstat.component.scss'],
 })
-export class DatepickerComponent {
+export class IConstatComponent  {
+
   editField: string;
     personList: Array<any> = [
       { id: 1, name: 'Au', age: 30, companyName: 'Dee', country: 'Spain', city: 'Madrid' },

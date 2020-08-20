@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-// import {MatExpansionModule} from '@angular/material/expansion';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatAccordion} from '@angular/material/expansion';
 
 
 @Component({
@@ -10,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpansionComponent {
   panelOpenState = false;
+
+  @ViewChild(MatAccordion) accordion: MatAccordion;
+
   // constructor() { }
 
   // ngOnInit() { }
