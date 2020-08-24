@@ -43,6 +43,8 @@
       </nb-card-body>
     </nb-card>
   </div>
+
+  
   <div class="col-4">
     <nb-card>
       <nb-card-header>Invitations</nb-card-header>
@@ -92,65 +94,77 @@
   <div class="col-8">
     <nb-card size="small">
       <nb-tabset fullWidth>
-    <nb-tab tabTitle="Planification" class="c">
-       <div  class="full-name-inputs">
-          <label  class="label">Date Prevue </label>
-          <input nbInput [nbDatepicker]="formpicker">
-   <nb-datepicker #formpicker></nb-datepicker>
-   <label  class="label">Heure debut prévue </label>
-   <input type="time" nbInput fullWidth>
-  </div>
-   <div class="full-name-inputs">
-     <label  class="label">Durée prévue </label> 
-     <input type="text" nbInput fullWidth></div>
+        <nb-tab tabTitle="Planification" class="c">
+          <div  class="full-name-inputs">
+            <label  class="label">Date Prevue </label>
+            <input nbInput [nbDatepicker]="formpicker">
+            <nb-datepicker #formpicker></nb-datepicker>
+            <label  class="label">Heure debut prévue </label>
+            <input type="time" nbInput fullWidth>
+          </div>
+          <div >
+            <label  class="label">Durée prévue </label> 
+            <input type="text" nbInput fullWidth>
+          </div>
+          <div  class="full-name-inputs">
 
-   <div  class="full-name-inputs">
-    <label  class="label">lieu</label> 
-    <input type="text" nbInput fullWidth>
+            <label  class="label">lieu</label> 
+            <input type="text" nbInput fullWidth>
 
-    <label  class="label">Heure fin prévue </label> 
-    <input type="time" nbInput fullWidth>
-   </div>
-</nb-tab>
+            <label  class="label">Heure fin prévue </label> 
+            <input type="time" nbInput fullWidth>
+          </div>
+        </nb-tab>
         <nb-tab tabTitle="Réalisation" class="c">
 
         </nb-tab>
       </nb-tabset>
     </nb-card>
   </div>
+
+
+
+
   <div class="col-2">
     <nb-card size="small">
      <nb-card-header>Repeter la reunion</nb-card-header>
-      <nb-radio-group [(value)]="radioGroupValuee" style= "margin-right: 40px;">
-        <nb-radio
-          [value]="'This is value 1'">
-<label>         jamais</label>
+     <nb-card-body>
+      <nb-radio-group [(value)]="radioGroupValuee"  >
+
+        <nb-radio [value]="'This is value 1'">
+          <label>jamais</label>
         </nb-radio>
-        <nb-radio
-          [value]="'This is value 2'">
-          <label> quotidienne</label>
+
+        <nb-radio [value]="'This is value 2'">
+          <label>quotidienne</label>
         </nb-radio>
-        <nb-radio
-          [value]="'This is value 3'">
-          <label>  hebdomadaire</label>
+
+        <nb-radio [value]="'This is value 3'">
+          <label>hebdomadaire</label>
         </nb-radio>
-        <nb-radio
-        [value]="'This is value 4'">
-        <label>   Mesuelle</label>
-      </nb-radio> <nb-radio
-      [value]="'This is value 5'">
-      <label>     Annuelle</label>
-    </nb-radio>
+
+        <nb-radio [value]="'This is value 4'">
+          <label>Mesuelle</label>
+        </nb-radio> 
+        
+        <nb-radio [value]="'This is value 5'">
+          <label>Annuelle</label>
+      </nb-radio>
 
       </nb-radio-group>
+    </nb-card-body>
 
     </nb-card>
   </div>
 
 
+
+
+
 <div class="col-2" >
     <nb-card size="small">
   <nb-card-header>Module</nb-card-header>
+  <nb-card-body>
      <div class="demo-items">
       <nb-radio-group [(value)]="radioGroupValue">
         <nb-radio
@@ -163,9 +177,12 @@
         </nb-radio>
       </nb-radio-group>
     </div>
+  </nb-card-body>
     </nb-card>
   </div>
 </div>
+
+
 <div class="row">
   <div class="col-12">
   <ngx-datepicker></ngx-datepicker>

@@ -8,8 +8,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   templateUrl: './form-inputs.component.html',
 })
 export class FormInputsComponent {
-
-  
+  radioGroupValue='';
+  radioGroupValuee='';
   customer: list = new list();
   submitted = false;
   constructor(public ser:SmartTableService){}

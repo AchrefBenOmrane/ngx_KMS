@@ -43,17 +43,22 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {ExpansionComponent} from './expansion/expansion.Component'
+// import {ExpansionComponent} from './expansion/expansion.Component'
 
 import { MaterialTableComponent } from './material-table/material-table.component'
 
 import {MatExpansionModule} from '@angular/material/expansion';
 
+// import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   imports: [
+    CommonModule,
+    // BrowserModule,
     MatSortModule,
     MatPaginatorModule,
     MatTooltipModule,
@@ -80,6 +85,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ThemeModule,
     NbAccordionModule,
     MatExpansionModule,
+    // BrowserAnimationsModule,
     
 
 
@@ -94,7 +100,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     GererComponent,
     FsIconComponent,
     TreeGridComponent,
-    ExpansionComponent,
+    // ExpansionComponent,
   
     
     MaterialTableComponent
