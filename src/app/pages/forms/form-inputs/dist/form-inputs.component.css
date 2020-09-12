@@ -1,0 +1,56 @@
+nb-card-body {
+  overflow: visible;
+  padding-top: 0;
+}
+nb-card-body > * {
+  margin-top: 1rem;
+}
+
+.full-name-inputs,
+.validation-checkboxes {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+.full-name-inputs > *,
+.validation-checkboxes > * {
+  margin: 0 0.5rem;
+}
+
+.checkbox-radio {
+  display: flex;
+}
+
+.demo-items {
+  flex: 1 0 33%;
+}
+
+nb-tabset {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:host ::ng-deep ngx-tab1, :host ::ng-deep ngx-tab2 {
+  display: block;
+  padding: 1rem 2rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image td, .table-image th {
+  vertical-align: middle;
+}
+
+th {
+  color: #1E90FF;
+}
+
+nb-tab {
+  color: black;
+}
+
+.pt-3-half {
+  padding-top: 1.4rem;
+}

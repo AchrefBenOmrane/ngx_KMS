@@ -27,14 +27,24 @@
               <label  class="label">Piéce jointe</label> <input type="file" placeholder="choisir un fichier" nbInput fullWidth>
         </div>
         <div class="full-name-inputs">
+
           <label  class="label">Responsable PV</label>
-           <input type="text" nbInput fullWidth >
+          <nb-select selected="1">
+            <nb-option value="1">Rpv1</nb-option>
+            <nb-option value="2">Rpv2</nb-option>
+          </nb-select>
 
           <label  class="label">Responsable animateur</label>
-           <input type="text" nbInput fullWidth >
+          <nb-select selected="1">
+            <nb-option value="1">RpAnim1</nb-option>
+            <nb-option value="2">RpAnim2</nb-option>
+          </nb-select>
+          <label  class="label"> animateur</label>
+          <nb-select selected="1">
+            <nb-option value="1">Anim1</nb-option>
+            <nb-option value="2">Anim2</nb-option>
+          </nb-select>
 
-          <label  class="label">Animateur</label>
-           <input type="text" nbInput fullWidth>
 
         </div>
         <label  class="label">commentaires</label>
@@ -44,17 +54,18 @@
     </nb-card>
   </div>
 
-  
+
   <div class="col-4">
     <nb-card>
       <nb-card-header>Invitations</nb-card-header>
     <nb-card-body>
+      <div class="table-responsive">
     <table class="table table-borderless">
       <thead>
         <tr>
           <th scope="col"></th>
           <th scope="col">employé</th>
-          <th scope="col">group</th>
+          <th scope="col">groupe</th>
           <th scope="col">email</th>
         </tr>
       </thead>
@@ -85,6 +96,7 @@
 
       </tbody>
     </table>
+  </div>
   </nb-card-body>
     </nb-card>
   </div>
@@ -103,21 +115,19 @@
             <input type="time" nbInput fullWidth>
           </div>
           <div >
-            <label  class="label">Durée prévue </label> 
+            <label  class="label">Durée prévue </label>
             <input type="text" nbInput fullWidth>
           </div>
           <div  class="full-name-inputs">
 
-            <label  class="label">lieu</label> 
+            <label  class="label">lieu</label>
             <input type="text" nbInput fullWidth>
 
-            <label  class="label">Heure fin prévue </label> 
+            <label  class="label">Heure fin prévue </label>
             <input type="time" nbInput fullWidth>
           </div>
         </nb-tab>
-        <nb-tab tabTitle="Réalisation" class="c">
 
-        </nb-tab>
       </nb-tabset>
     </nb-card>
   </div>
@@ -145,8 +155,8 @@
 
         <nb-radio [value]="'This is value 4'">
           <label>Mesuelle</label>
-        </nb-radio> 
-        
+        </nb-radio>
+
         <nb-radio [value]="'This is value 5'">
           <label>Annuelle</label>
       </nb-radio>
@@ -181,16 +191,16 @@
     </nb-card>
   </div>
 </div>
-
+ss
 
 <div class="row">
   <div class="col-12">
-  <ngx-datepicker></ngx-datepicker>
+  <ngx-pointAdiscuter></ngx-pointAdiscuter>
 </div>
 </div>
 <div class="row" style="margin-right:50px">
-<button type="button" class="btn btn-primary" type="submit" style="margin-right:50px">Valider</button>
-<button type="button" class="btn btn-danger" >Annuler</button>
+<button type="button" class="btn btn-primary"center-block type="submit" style="margin-right:50px">Valider</button>
+<button type="button" class="btn btn-danger" center-block >Annuler</button>
 </div>
 
 

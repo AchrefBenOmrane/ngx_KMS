@@ -6,7 +6,12 @@ import { FormsComponent } from './forms.component';
 import { FormInputsComponent } from './form-inputs/form-inputs.component';
 import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
-import { ButtonsComponent } from './buttons/buttons.component';
+import { DecisionComponent } from './decision/decision.component';
+import { DialogComponent } from './popup/popup.component';
+import { PopupComponent } from './popup/popup.component';
+import { ActionComponent } from './action/action.component';
+import { DesActionComponent } from './desAction/desAction.component';
+import { ModifReuComponent } from './modifReu/modifReu.component';
 // tslint:disable-next-line: import-spacing
 
 const routes: Routes = [
@@ -23,6 +28,11 @@ const routes: Routes = [
         component: FormLayoutsComponent,
       },
       {
+        path: 'modifReu',
+        component:  ModifReuComponent,
+        
+      },
+      {
         path: 'layouts',
         component: FormLayoutsComponent,
       },
@@ -31,8 +41,25 @@ const routes: Routes = [
         component: IConstatComponent,
       },
       {
+        path: 'decision',
+        component:  DecisionComponent,
+
+      },
+      {
+        path: 'popup',
+        component: PopupComponent,
+      },
+      {
+        path: 'desAction',
+        component: DesActionComponent,
+      },
+      {
         path: 'datepicker',
         component: DatepickerComponent,
+      },
+      {
+        path: 'action',
+        component: ActionComponent,
       },
     ],
   },

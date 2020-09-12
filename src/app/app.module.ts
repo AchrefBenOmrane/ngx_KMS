@@ -23,6 +23,8 @@ import {
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material/core';
 // import { MatCardModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,6 +46,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    MaterialModule,
+    MatExpansionModule,
   ],
   bootstrap: [AppComponent],
 })

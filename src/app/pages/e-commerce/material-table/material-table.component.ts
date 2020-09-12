@@ -7,6 +7,7 @@ import {list} from '../../../@core/mock/listClass';
 import jsPDF from 'jspdf';
 // import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import * as XLSX from 'xlsx'; 
 
 @Component({
   selector: 'ngx-material-table',
@@ -24,11 +25,12 @@ export class MaterialTableComponent implements OnInit{
     
 
     // dataSource = new MatTableDataSource(ELEMENT_DATA);
-    dataSource=[];
+    // dataSource=[];
+    dataSource: MatTableDataSource <list>;
     // @ViewChild(MatPaginator,{static:false}) paginator: MatPaginator;
     // @ViewChild(MatSort, {static:false}) sort: MatSort;
-    @ViewChild(MatPaginator ,{}) paginator: MatPaginator;
-    @ViewChild(MatSort ,{}) sort: MatSort;
+    @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+    @ViewChild(MatSort ) sort: MatSort;
 
 
   // ngAfterViewInit() {
@@ -47,13 +49,15 @@ export class MaterialTableComponent implements OnInit{
     ){}
 ngOnInit(){
   this.getName();
- 
+  this.dataSource = new MatTableDataSource(this.table);
+  this.dataSource.paginator = this.paginator;
+  this.dataSource.sort = this.sort;
 
 }
     getName(){
       this.listeService.getData().subscribe(
         res=>{
-          this.dataSource= res as list[];
+          this.dataSource = res ;
           console.log(res);
           
 
@@ -61,6 +65,7 @@ ngOnInit(){
         err=>{this.error=err;
         console.log(err);
         }
+        
       )
     }
     data = [
@@ -100,6 +105,34 @@ ngOnInit(){
       doc.save('table.pdf');
     }
 
+
+    applyFilter(filterValue: string) {
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+  
+      if (this.dataSource.paginator) {
+        this.dataSource.paginator.firstPage();
+      }
+    }
+
+
+
+
+    fileName= 'ExcelSheet.xlsx';  
+
+exportexcel(): void 
+    {
+       /* table id is passed over here */   
+       let element = document.getElementById('excel-table'); 
+       const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+       /* generate workbook and add the worksheet */
+       const wb: XLSX.WorkBook = XLSX.utils.book_new();
+       XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+       /* save to file */
+       XLSX.writeFile(wb, this.fileName);
+			
+    }
   
   
   }

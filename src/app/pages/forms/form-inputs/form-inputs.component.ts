@@ -33,5 +33,5 @@ export class FormInputsComponent {
   onSubmit() {
     this.save();
   }
- 
+
 }

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+// import {MaterialModule} from '../../material/material.module'
 import {
   NbButtonModule,
   NbCardModule,
@@ -44,7 +45,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 // import {ExpansionComponent} from './expansion/expansion.Component'
 
 import { MaterialTableComponent } from './material-table/material-table.component'
@@ -53,12 +54,19 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 // import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { InvitationsComponent } from './invitations/invitations.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    MatCardModule,
+    // MaterialModule,
     // BrowserModule,
+    MatTabsModule,
     MatSortModule,
     MatPaginatorModule,
     MatTooltipModule,
@@ -85,7 +93,9 @@ import { CommonModule } from '@angular/common';
     ThemeModule,
     NbAccordionModule,
     MatExpansionModule,
+    MatFormFieldModule,
     // BrowserAnimationsModule,
+    MatToolbarModule,
     
 
 
@@ -103,7 +113,8 @@ import { CommonModule } from '@angular/common';
     // ExpansionComponent,
   
     
-    MaterialTableComponent
+    MaterialTableComponent,
+    InvitationsComponent
    
   ],
   providers: [

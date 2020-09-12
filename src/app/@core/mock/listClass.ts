@@ -19,6 +19,7 @@ export class list{
         public rttype?:string,
         public rDatecreation?:string,
         public rcreateur?:string,
+        public RHeureFin?:string
 
         ){
 

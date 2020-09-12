@@ -10,6 +10,8 @@ import { AddComponent } from './add/add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms'; 
+import {MatExpansionModule} from '@angular/material/expansion';
+
 @NgModule({
   imports: [
     PagesRoutingModule,
@@ -20,6 +22,7 @@ import {FormsModule} from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatExpansionModule,
   ],
   declarations: [
     PagesComponent,

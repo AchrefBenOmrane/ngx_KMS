@@ -1,0 +1,83 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Bootstrap Table with Add and Delete Row Feature</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href=”https://fonts.googleapis.com/icon?family=Material+Icons” rel=”stylesheet”>
+  }
+
+
+  </head>
+  <body>
+
+
+
+
+  <!-- Editable table -->
+  <div class="card">
+  <nb-card-header>decision num 1
+
+    <ul style="white-space:nowrap; display:inline; list-style:none;">
+      <a class="text-success" (click)="add()">
+        <li style="white-space:nowrap; display:inline; list-style:none; padding:30px;">
+          <img src="../../../assets/images/add.png" width="25" height="25"></li> </a>
+          <li style="white-space:nowrap; display:inline; list-style:none; padding:30px;">
+            <img src="../../../assets/images/repeat(1).png" width="25" height="25"></li>
+            <li style="white-space:nowrap; display:inline; list-style:none; padding:30px;">
+              <img src="../../../assets/images/pencil.png" width="25" height="25"></li>
+
+    </ul>
+  </nb-card-header>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+
+        <div class="table-responsive">
+        <table class="table table-borderless z-depth-1">
+          <tr>
+            <th class="text-center">Décision</th>
+            <th class="text-center">Description
+            <th class="text-center">Commentaire </th>
+            <th></th>
+         
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            </td>
+            
+           
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true"> <img src="../../../assets/images/add.png" width="25" height="25"></span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <a class="text-success" (click)="remove(id)"><img src="../../../assets/images/criss-cross.png" width="25" height="25"></a>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Editable table -->
+  </body>
+  </html>
+

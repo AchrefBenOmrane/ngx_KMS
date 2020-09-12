@@ -1,0 +1,266 @@
+<!-- <html>
+  <head>
+
+  </head> -->
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()">
+
+<div class="row">
+  <div class="col-lg-8"  class="col-md-8">
+    <nb-card>
+      <nb-card-header>Informations</nb-card-header>
+      <nb-card-body>
+
+        <div class="form-group">
+          <label  class="label">Titre Réunion</label>
+          <input type="text" nbInput fullWidth id="rtitrereunion" class="form-control" [(ngModel)]="customer.rtitrereunion" name="rtitrereunion">
+        </div>
+
+
+        <div class="full-name-inputs">
+          <label  class="label">Type</label>
+              <nb-select selected="1">
+                <nb-option value="1">type 1</nb-option>
+                <nb-option value="2">type 2</nb-option>
+              </nb-select>    <label  class="label">Etat</label>   <label  class="label">En cours</label>
+
+              <label  class="label">Piéce jointe</label> <input type="file" placeholder="choisir un fichier" nbInput fullWidth>
+        </div>
+        <div class="full-name-inputs">
+
+          <label  class="label">Responsable PV</label>
+          <nb-select selected="1">
+            <nb-option value="1">Rpv1</nb-option>
+            <nb-option value="2">Rpv2</nb-option>
+          </nb-select> 
+         
+          <label  class="label">Responsable animateur</label>
+          <nb-select selected="1">
+            <nb-option value="1">RpAnim1</nb-option>
+            <nb-option value="2">RpAnim2</nb-option>
+          </nb-select> 
+          <label  class="label"> animateur</label>
+          <nb-select selected="1">
+            <nb-option value="1">Anim1</nb-option>
+            <nb-option value="2">Anim2</nb-option>
+          </nb-select> 
+         
+
+        </div>s
+        <label  class="label">commentaires</label>
+        <textarea rows="5" nbInput fullWidth shape="round"></textarea>
+
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+
+  <div class="col-4">
+   
+      <div class="table-responsive">
+        <nb-tabset>
+          <nb-tab tabTitle="Invitations">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">employé</th>
+          <th scope="col">group</th>
+          <th scope="col">email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                <label class="custom-control-label" for="customCheck1">1</label>
+            </div>
+          </td>
+          <td>Bootstrap </td>
+          <td>Cristina</td>
+          <td>Cristina</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">2</label>
+            </div>
+          </td>
+          <td>Bootstrap</td>
+         <td>ghhrh</td>
+         <td>ghhrh</td>
+
+        </tr>
+
+      </tbody>
+    </table>
+ 
+</nb-tab>
+<nb-tab tabTitle="participation" >
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col" style="color:black">invité</th>
+        <th scope="col"  style="color:black">H.E</th>
+        <th scope="col"  style="color:black">H.S</th>
+        <th scope="col"  style="color:black">participation</th>
+        <th scope="col" style="color:black">PV</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       
+        <td>rihab </td>
+        <td>  </td>
+        <td>  </td>
+        <td>  </td>
+        <td>  </td>
+      </tr>
+      <tr>
+       
+        <td>mariem</td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <input type="checkbox" ><label> annoncer par email</label>
+</nb-tab>
+  </nb-tabset>
+</div></div>
+
+<div class="row">
+  <div class="col-8">
+    <nb-card size="small">
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Planification" class="c">
+          <div  class="full-name-inputs">
+            <label  class="label">Date Prevue </label>
+            <input nbInput [nbDatepicker]="formpicker">
+            <nb-datepicker #formpicker></nb-datepicker>
+            <label  class="label">Heure debut prévue </label>
+            <input type="time" nbInput fullWidth>
+          </div>
+          <div >
+            <label  class="label">Durée prévue </label>
+            <input type="text" nbInput fullWidth>
+          </div>
+          <div  class="full-name-inputs">
+
+            <label  class="label">lieu</label>
+            <input type="text" nbInput fullWidth>
+
+            <label  class="label">Heure fin prévue </label>
+            <input type="time" nbInput fullWidth>
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Réalisation" class="c">
+          <div  class="full-name-inputs">
+            <label  class="label">Date Realisation </label>
+            <input nbInput [nbDatepicker]="formpicker">
+            <nb-datepicker #formpicker></nb-datepicker>
+            <label  class="label">Heure debut realis </label>
+            <input type="time" nbInput fullWidth>
+          </div>
+            <div  class="full-name-inputs">
+
+              <label  class="label">Durée realisée </label>
+              <input type="text" nbInput fullWidth>
+  
+              <label  class="label">Heure fin realis </label>
+              <input type="time" nbInput fullWidth>
+        
+          </div>
+         
+        </nb-tab>
+      
+
+       
+      </nb-tabset>
+    </nb-card>
+  </div>
+
+
+
+
+  <div class="col-2">
+    <nb-card size="small">
+     <nb-card-header>Repeter la reunion</nb-card-header>
+     <nb-card-body>
+      <nb-radio-group [(value)]="radioGroupValuee"  >
+
+        <nb-radio [value]="'This is value 1'">
+          <label>jamais</label>
+        </nb-radio>
+
+        <nb-radio [value]="'This is value 2'">
+          <label>quotidienne</label>
+        </nb-radio>
+
+        <nb-radio [value]="'This is value 3'">
+          <label>hebdomadaire</label>
+        </nb-radio>
+
+        <nb-radio [value]="'This is value 4'">
+          <label>Mesuelle</label>
+        </nb-radio>
+
+        <nb-radio [value]="'This is value 5'">
+          <label>Annuelle</label>
+      </nb-radio>
+
+      </nb-radio-group>
+    </nb-card-body>
+
+    </nb-card>
+  </div>
+
+
+
+
+
+<div class="col-2" >
+    <nb-card size="small">
+  <nb-card-header>Module</nb-card-header>
+  <nb-card-body>
+     <div class="demo-items">
+      <nb-radio-group [(value)]="radioGroupValue">
+        <nb-radio
+          [value]="'This is value 1'">
+        client
+        </nb-radio>
+        <nb-radio
+          [value]="'This is value 2'">
+         Actionnaire
+        </nb-radio>
+      </nb-radio-group>
+    </div>
+  </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-12">
+  <ngx-datepicker></ngx-datepicker>
+</div>
+</div>
+<div class="row" style="margin-right:50px">
+<button type="button" class="btn btn-info"center-block type="submit" style="margin-right:50px">Valider</button>
+
+<button type="button" class="btn btn-info"center-block type="submit" style="margin-right:50px">cloturer</button>
+<button type="button" class="btn btn-info"center-block type="submit" style="margin-right:50px">génerer PV</button>
+<button type="button" class="btn btn-danger" style="margin-right:50px" center-block >fermer</button>
+
+</div>
+
+
+
+</div>
+

@@ -1,0 +1,11 @@
+@media all and (min-width: 768px) {
+  tr td {
+    vertical-align: middle !important;
+  }
+  tr th {
+    color: #1E90FF;
+  }
+  tr span:not([class]) {
+    padding: 1rem 1rem;
+  }
+}
